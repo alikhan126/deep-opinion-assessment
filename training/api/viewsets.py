@@ -56,6 +56,11 @@ class TrainingDataViewSet(viewsets.ModelViewSet):
         methods=["post"], detail=False, serializer_class=TrainingDataUploadSerializer
     )
     def upload(self, request):
+        """
+        Form-data:
+
+        file: type: file and then select the file
+        """
         file = request.FILES["file"]
 
         # Check if the file is a CSV or XLSX file
